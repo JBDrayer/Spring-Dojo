@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd
+	   					   http://www.springframework.org/schema/context 
+	   					   http://www.springframework.org/schema/context/spring-context.xsd
+	   					   http://www.springframework.org/schema/util
+       					   http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="request"
+		class="com.nf.eb2b.springdojo.request.SpringRequest"
+		c:teamMember-ref="brad"/>
+		
+	<bean id="brad"
+		class="com.nf.eb2b.springdojo.domain.TeamMember"
+		c:greeting-ref="greeting"
+		c:name-ref="name"
+		c:team-ref="team"
+		c:programmingLanguages-ref="programmingLanguages"
+		c:hobbies-ref="hobbies"
+		c:farewell-ref="farewell"/>
+		
+	<bean id="greeting"
+		class="com.nf.eb2b.springdojo.domain.Greeting"
+		c:greeting="Hi"/>
+	
+	<bean id="name"
+		class="com.nf.eb2b.springdojo.domain.Name"
+		c:name="Brad"/>
+	
+	<bean id="team"
+		class="com.nf.eb2b.springdojo.domain.Team"
+		c:teamKey="#{T(com.nf.eb2b.springdojo.enums.TeamEnum).BUILD}"
+		c:teamMap-ref="teamMap"/>
+	
+	<util:map id="teamMap">
+	<entry key="#{T(com.nf.eb2b.springdojo.enums.TeamEnum).BUILD}" value="build"/>
+	<entry key="#{T(com.nf.eb2b.springdojo.enums.TeamEnum).RUN}" value="run"/>
+	</util:map>
+	
+	<bean id="programmingLanguages"
+		class="com.nf.eb2b.springdojo.domain.ProgrammingLanguages"
+		c:languages-ref="programmingLanguagesList"/>
+		
+ 	<util:list id="programmingLanguagesList">
+		<ref bean="java"/>
+		<ref bean="javascript"/>
+		<ref bean="c++"/>
+		<ref bean="c#"/>
+	</util:list>
+	
+	<bean id="java"
+		class="com.nf.eb2b.springdojo.domain.ProgrammingLanguage"
+		c:language="Java"/>
+	
+	<bean id="javascript"
+		class="com.nf.eb2b.springdojo.domain.ProgrammingLanguage"
+		c:language="Javascript"/>
+	
+	<bean id="c++"
+		class="com.nf.eb2b.springdojo.domain.ProgrammingLanguage"
+		c:language="C++"/>
+	
+	<bean id="c#"
+		class="com.nf.eb2b.springdojo.domain.ProgrammingLanguage"
+		c:language="C#"/>
+		
+	<bean id="hobbies"
+		class="com.nf.eb2b.springdojo.domain.Hobbies"
+		c:hobbies-ref="hobbieList"/>
+		
+	<util:list id="hobbieList">
+		<ref bean="videoGames"/>
+		<ref bean="electronics"/>
+		<ref bean="bassGuitar"/>
+	</util:list>
+	
+	<bean id="videoGames"
+		class="com.nf.eb2b.springdojo.domain.Hobbie"
+		c:hobbie="playing videogames"/>
+	
+	<bean id="electronics"
+		class="com.nf.eb2b.springdojo.domain.Hobbie"
+		c:hobbie="building electronics"/>
+		
+	<bean id="bassGuitar"
+		class="com.nf.eb2b.springdojo.domain.Hobbie"
+		c:hobbie="playing bass guitar"/>
+		
+	<bean id="farewell"
+		class="com.nf.eb2b.springdojo.domain.Farewell"
+		c:farewell="Thanks for running my context!"/>
+</beans>       					   
