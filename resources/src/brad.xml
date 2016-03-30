@@ -11,11 +11,11 @@
        					   http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<bean id="request"
-		class="com.nf.eb2b.springdojo.request.SpringRequest"
+		class="springdojo.request.SpringRequest"
 		c:teamMember-ref="brad"/>
 		
 	<bean id="brad"
-		class="com.nf.eb2b.springdojo.domain.TeamMember"
+		class="springdojo.domain.TeamMember"
 		c:greeting-ref="greeting"
 		c:name-ref="name"
 		c:team-ref="team"
@@ -24,25 +24,25 @@
 		c:farewell-ref="farewell"/>
 		
 	<bean id="greeting"
-		class="com.nf.eb2b.springdojo.domain.Greeting"
+		class="springdojo.domain.Greeting"
 		c:greeting="Hi"/>
 	
 	<bean id="name"
-		class="com.nf.eb2b.springdojo.domain.Name"
+		class="springdojo.domain.Name"
 		c:name="Brad"/>
 	
 	<bean id="team"
-		class="com.nf.eb2b.springdojo.domain.Team"
-		c:teamKey="#{T(com.nf.eb2b.springdojo.enums.TeamEnum).BUILD}"
+		class="springdojo.domain.Team"
+		c:teamKey="#{T(springdojo.enums.TeamEnum).BUILD}"
 		c:teamMap-ref="teamMap"/>
 	
 	<util:map id="teamMap">
-	<entry key="#{T(com.nf.eb2b.springdojo.enums.TeamEnum).BUILD}" value="build"/>
-	<entry key="#{T(com.nf.eb2b.springdojo.enums.TeamEnum).RUN}" value="run"/>
+	<entry key="#{T(springdojo.enums.TeamEnum).BUILD}" value="build"/>
+	<entry key="#{T(springdojo.enums.TeamEnum).RUN}" value="run"/>
 	</util:map>
 	
 	<bean id="programmingLanguages"
-		class="com.nf.eb2b.springdojo.domain.ProgrammingLanguages"
+		class="springdojo.domain.ProgrammingLanguages"
 		c:languages-ref="programmingLanguagesList"/>
 		
  	<util:list id="programmingLanguagesList">
@@ -53,23 +53,23 @@
 	</util:list>
 	
 	<bean id="java"
-		class="com.nf.eb2b.springdojo.domain.ProgrammingLanguage"
+		class="springdojo.domain.ProgrammingLanguage"
 		c:language="Java"/>
 	
 	<bean id="javascript"
-		class="com.nf.eb2b.springdojo.domain.ProgrammingLanguage"
+		class="springdojo.domain.ProgrammingLanguage"
 		c:language="Javascript"/>
 	
 	<bean id="c++"
-		class="com.nf.eb2b.springdojo.domain.ProgrammingLanguage"
+		class="springdojo.domain.ProgrammingLanguage"
 		c:language="C++"/>
 	
 	<bean id="c#"
-		class="com.nf.eb2b.springdojo.domain.ProgrammingLanguage"
+		class="springdojo.domain.ProgrammingLanguage"
 		c:language="C#"/>
 		
 	<bean id="hobbies"
-		class="com.nf.eb2b.springdojo.domain.Hobbies"
+		class="springdojo.domain.Hobbies"
 		c:hobbies-ref="hobbieList"/>
 		
 	<util:list id="hobbieList">
@@ -79,18 +79,18 @@
 	</util:list>
 	
 	<bean id="videoGames"
-		class="com.nf.eb2b.springdojo.domain.Hobbie"
+		class="springdojo.domain.Hobbie"
 		c:hobbie="playing videogames"/>
 	
 	<bean id="electronics"
-		class="com.nf.eb2b.springdojo.domain.Hobbie"
+		class="springdojo.domain.Hobbie"
 		c:hobbie="building electronics"/>
 		
 	<bean id="bassGuitar"
-		class="com.nf.eb2b.springdojo.domain.Hobbie"
+		class="springdojo.domain.Hobbie"
 		c:hobbie="playing bass guitar"/>
 		
 	<bean id="farewell"
-		class="com.nf.eb2b.springdojo.domain.Farewell"
+		class="springdojo.domain.Farewell"
 		c:farewell="Thanks for running my context!"/>
 </beans>       					   
