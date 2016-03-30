@@ -13,7 +13,10 @@ public class ProgrammingLanguages {
 	public void addLanguagesToContent(StringBuilder content) {
 		content.append("I know how to write ");
 		for (ProgrammingLanguage language : languages) {
-			if (languages.indexOf(language) != languages.size() - 1) {
+			if(languages.size()==1){
+				language.addLanguageToContent(content);
+				content.append(" code. ");
+			}else if (languages.indexOf(language) != languages.size() - 1) {
 				language.addLanguageToContent(content);
 				if (languages.indexOf(language) != languages.size() - 2) {
 					content.append(", ");
@@ -25,5 +28,4 @@ public class ProgrammingLanguages {
 			}
 		}
 	}
-
 }

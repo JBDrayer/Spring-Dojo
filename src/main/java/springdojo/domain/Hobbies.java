@@ -12,13 +12,16 @@ public class Hobbies {
 
 	public void addHobbiesToContent(StringBuilder content) {
 		content.append("My hobbies include ");
-		for (Hobbie hobbie : hobbies){
-			if((hobbies.indexOf(hobbie) != hobbies.size()-1)){
+		for (Hobbie hobbie : hobbies) {
+			if (hobbies.size() == 1) {
 				hobbie.addHobbieToContent(content);
-				if((hobbies.indexOf(hobbie) != hobbies.size()-2))
-				content.append(", ");
-			} 
-			if((hobbies.indexOf(hobbie) == hobbies.size()-1)){
+				content.append(". ");
+			} else if ((hobbies.indexOf(hobbie) != hobbies.size() - 1)) {
+				hobbie.addHobbieToContent(content);
+				if ((hobbies.indexOf(hobbie) != hobbies.size() - 2)) {
+					content.append(", ");
+				}
+			}else {
 				content.append(" and ");
 				hobbie.addHobbieToContent(content);
 				content.append(". ");

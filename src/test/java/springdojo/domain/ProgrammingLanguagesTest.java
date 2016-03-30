@@ -69,6 +69,7 @@ public class ProgrammingLanguagesTest {
 
 		verify(languageOne).addLanguageToContent(content);
 		verify(languageTwo).addLanguageToContent(content);
+		verify(languageThree).addLanguageToContent(content);
 	}
 
 	@Test
